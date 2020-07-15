@@ -26,10 +26,6 @@ app.use(userRoutes);
 router.get("/", (req, res) => {
   res.send("hello world");
 });
-// Serve up static assets on heroku
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now listening on port ${PORT}!`);
